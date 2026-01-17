@@ -26,7 +26,7 @@ https://github.gydos.org --> README.md at https://gydos-dot-org.github.io
 
 very shortly, the actual scripts and documentation should be available at https://github.com/gydos-dot-org
 
-Gydos.org is currently trying to deploy these two interrelated projects at Github.
+Gydos.org is currently trying to deploy these two interrelated projects at Github (vishgit & SMellinux)
 
 The practice is vishgit and the place we do vishgit is Smellinux.
 
