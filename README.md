@@ -105,6 +105,10 @@ The result:
 
 - vim as the Universal Interface
 
+
+vishgit is a practice of using text in the command line environment
+--------------------
+
 In vishgit, everything is text:
 
 - Shell scripts
