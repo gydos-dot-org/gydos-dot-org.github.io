@@ -147,8 +147,6 @@ Writing, data, and scripts all evolve together. Learning is visible. Changes are
 The KJV CSV Dataset
 ---------------
 
-
-
 At the heart of Smellinux is a git pull of a public-domain King James Version Bible, structured as a simple CSV database (Meta-V).
 
 This choice is both practical and historical:
@@ -175,7 +173,10 @@ Historically, English literacy was built around reading and writing the Bible—
 
 English literacy and computer literacy begin together.
 
+
 A Practice, Not a Platform
+----------------
+
 vishgit is not a course, framework, or product.
 
 It is a practice.
@@ -227,6 +228,3 @@ vishgit + Smellinux is:
 - A path toward fluency through repetition
 
 Small tools. Deep practice. Lasting skills.
-
-
-
