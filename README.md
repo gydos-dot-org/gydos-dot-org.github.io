@@ -41,7 +41,7 @@ Key characteristics:
 Smellinux can run anywhere a terminal exists, making it suitable for low-resource devices, shared machines, or constrained environments.
 
 
-The Shell Standard
+**The Shell Standard**
 ‐-----------------
 
 All executable scripts in Smellinux begin with: (Sh)
@@ -88,8 +88,8 @@ It is used as:
 Writing, data, and scripts all evolve together. Learning is visible. Changes are traceable. Sharing is native.
 
 
-The KJV CSV Dataset
--‐---------------------------------
+**The KJV CSV Dataset**
+-‐---------------------
 
 At the heart of Smellinux is a git pull of a public-domain King James Version Bible, structured as a simple CSV database (Meta-V).
 
