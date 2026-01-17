@@ -15,7 +15,7 @@ c/o Gydos Dot Org
 
 Durham, NC 27705-4188
 
-paul@gydos.org
+Email: paul@gydos.org
 
 
 README.md at https://github.gydos.org
