@@ -8,14 +8,17 @@ Gydos.org
 ---------
 
 Paul Gydos, Founder
+
 c/o Gydos Dot Org (gydos.org)
+
 811 Ninth St. Ste. 120 #114
+
 Durham, NC 27705-4188
 
 paul@gydos.org
 
 currently best place to start is this README.md at 
-https://github.gydos.org
+https://github.gydos.org --> README.md at https://gydos-dot-org.github.io
 
 very shortly, the actual scripts and documentation should be available at https://github.com/gydos-dot-org
 
@@ -23,6 +26,9 @@ Gydos.org is currently trying to deploy these two interrelated projects at Githu
 
 The practice is vishgit and the place we do vishgit is Smellinux.
 
+
+Smellinux project (vishgit) is available github.com/gydos-dot-org
+------------------------
 
 vishgit & Smellinux
 ===============
