@@ -1,7 +1,34 @@
+https://github.gydos.org resolves to https://gydos-dot-org.github.io
+
+This is the README.md for gydos-dot-org at github 
+(http://github.gydos.org --> https://gydos-dot-org.github.io)
+
+
+Gydos.org
+---------
+
+Paul Gydos, Founder
+c/o Gydos Dot Org (gydos.org)
+811 Ninth St. Ste. 120 #114
+Durham, NC 27705-4188
+
+paul@gydos.org
+
+currently best place to start is this README.md at 
+https://github.gydos.org
+
+very shortly, the actual scripts and documentation should be available at https://github.com/gydos-dot-org
+
+Gydos.org is currently trying to deploy these two interrelated projects at Github.
+
+The practice is vishgit and the place we do vishgit is Smellinux.
+
+
 vishgit & Smellinux
 ===============
 
 A text-first discipline for computer literacy
+
 
 Overview
 ---------------
@@ -25,7 +52,7 @@ The goal is not convenience or abstraction, but fluency—developed through repe
 
 
 What is Smellinux?
-------------------------------
+------------------
 
 Smellinux stands for “A Small Environment for Learning Linux.”
 
@@ -86,7 +113,7 @@ This is not about preference—it is about unification. One editor. One set of m
 
 
 git as Memory and Fellowship
-----------------------------------------
+----------------------- 
 
 git is not treated merely as version control.
 
@@ -183,3 +210,6 @@ vishgit + Smellinux is:
 - A path toward fluency through repetition
 
 Small tools. Deep practice. Lasting skills.
+
+
+
