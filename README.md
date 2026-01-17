@@ -1,76 +1,154 @@
+vishgit & Smellinux
+===============
 
-http://gydos-dot-org.github.io
+A text-first discipline for computer literacy
 
-README.md
+Overview
+---------------
 
-Paul Gydos
-paul@gydos.org 
+vishgit is a deliberately small, text-centered practice built around three timeless tools:
 
-January 2026
+vim — for editing all text
 
-vishgit
+sh — specifically a POSIX-lean shell (dash / Almquist shell) for execution
 
-vishgit is what we call using vim dash and git in conjunction with one another.
+git — for memory, sharing, collaboration, and publication
+Rather than treating these as separate utilities, vishgit treats them as one integrated discipline:
 
-We try it out in an environment which I call Smellinux - A Small Environment for Learning Linux.
+- Edit with vim.
+- Execute with sh.
+- Remember with git.
 
-smell
-
-The way to do Smellinux is by making sure there is a command line environment in your device with access to a linux kernel and with some response to well known UNIX conventions.
-
-on android
-
-So far I've done it this way on an very inexpensive Android device. 
-
-I install fdroid from its own website from its downloadable .apk
-I use fdroid to install Termux
-
-Using Termux, I run a script written to do certain things. 
-
-The Smellinux v0.13 vishgit script for Termux on Android
-does the following:
-
-By bringing in an Alpine Minirootfs, introduce a more minimal busybox based userspace to be utilized by a chroot or proot from the Terminal to the Alpine Minirootfs Userspace which fdroid installed Termux will launch utilizing Android’s preexisting Linux kernel. This will give us our dash layer and userspace
-
-Bring in all dependencies necessary to install and run vim and git
-
-Install the foundational repository: The King James Version Bible in database form (csv - comma separated value database) from one of the github repository sites with a version of the “Metav KJV db”. This is the metav or kjv layer. 
-
-There should be a tutorial layer, which with development will emerge here as well in the near future. 
-
-smell command
-
-Once the Android device is properly configured with fdroid installed Termux and the Smellinux script has been brought in and run then,...
-
-The Smellinux system designed to give us an environment to vishgit in and get the foundational repository: The database version of The King Version Bible (metav kjv db)
-
-To enter the system simply, from the Termux command line (once the smellinux.sh script has been installed), one only needs to type: “smell”
-
-on windows 11
-
-gydos-dot-org currently endeavors to make a smellinux script for Windows 11 systems which have come off S-mode and installed the WSL environment
-
-At this time gydos-dot-org is testing using WSL installed Debian
-
-From there the modified Smellinux script for WSL activated Win 11 will attempt to: 
-
-By bringing in an Alpine Minirootfs, introduce a more minimal busybox based userspace to be utilized from the Command Prompt
-to the Alpine Minirootfs Userspace which WSL installed Debian will launch using WSL installed Debian's preexisting Linux kernel. This will give us our dash layer and userspace
-
-Bring in all dependencies necessary to install and run vim and git
-
-Install the foundational repository: The King James Version Bible in database form (csv - comma separated value database) from one of the github repository sites with a version of the “Metav KJV db”. This is the metav or kjv layer.
-
-There should be a tutorial layer, which with development will emerge here as well in the near future. 
-
-Shortly if all goes as planned then you should be able to get these instructions and the scripts from https://github.com/gydos-dot-org
+The goal is not convenience or abstraction, but fluency—developed through repetition until these tools live in muscle memory and thought flows naturally from text to execution to versioned history.
 
 
+What is Smellinux?
+------------------------------
+
+Smellinux stands for “A Small Environment for Learning Linux.”
+
+It is not a distribution in the traditional sense. Instead, Smellinux is a portable userspace, created by running a shell script in a host terminal that launches a customized Alpine Minirootfs. 
+
+This Alpine-based userspace becomes the learning environment in which all vishgit work happens.
+
+Key characteristics:
+
+- Minimal and distraction-free
+- Text-first by design
+- Reproducible across machines
+- Focused on fundamentals rather than tooling sprawl
+
+Smellinux can run anywhere a terminal exists, making it suitable for low-resource devices, shared machines, or constrained environments.
 
 
+The Shell Standard
+‐-----------------------------
+
+All executable scripts in Smellinux begin with: (Sh)
+#!/bin/sh
+
+This is intentional.
+
+In practice, /bin/sh resolves to dash (Debian Almquist Shell) or another Almquist-derived POSIX shell. 
+
+This enforces a portable, standards-based shell language and avoids shell-specific extensions.
+
+The result:
+
+- Scripts that run the same almost everywhere
+- A clear mental model of what “sh” actually is
+- A strong foundation for understanding UNIX systems
+- vim as the Universal Interface
+
+In vishgit, everything is text:
+
+- Shell scripts
+- CSV databases
+- Journal entries
+- Notes and essays
+- Documentation
+
+All of it is created and maintained in vim.
+
+This is not about preference—it is about unification. One editor. One set of motions. One mental model. Over time, editing becomes instinctive rather than cognitive.
 
 
+git as Memory and Fellowship
+------------------------------------------------
+
+git is not treated merely as version control.
+
+It is used as:
+
+- A personal memory system
+- A collaboration mechanism
+- A publishing pipeline
+- A historical record of thought and practice
+
+Writing, data, and scripts all evolve together. Learning is visible. Changes are traceable. Sharing is native.
 
 
+The KJV CSV Dataset
+-‐---------------------------------
+
+At the heart of Smellinux is a git pull of a public-domain King James Version Bible, structured as a simple CSV database (Meta-V).
+
+This choice is both practical and historical:
+
+- The KJV is public domain
+- It is rich, structured text
+- It invites reading, writing, querying, and transformation
+
+Historically, English literacy was built around reading and writing the Bible—memorizing, annotating, preaching, and applying text. Smellinux revives this tradition, but reframes it through modern computing literacy:
+
+- Text processing
+- Shell scripting
+- Data manipulation
+- Versioned study and annotation
+
+English literacy and computer literacy begin together.
+
+A Practice, Not a Platform
+vishgit is not a course, framework, or product.
+
+It is a practice.
+
+Through repetition:
+
+- Editing becomes natural
+- Scripting becomes conversational
+- The shell becomes expressive
+- Versioning becomes instinctive
+
+The aim is flow, not speed. 
+
+Depth, not breadth.
+
+
+Why “Small”?
+---------------------
+
+Smellinux is intentionally small because:
+
+- Fewer tools force understanding
+- Constraints sharpen thinking
+- Text reveals structure
+- Simplicity invites mastery
+
+This project moves in the opposite direction of GUI-heavy, abstracted “learn to code” platforms. It returns to the UNIX tradition: plain text, simple tools, composed together.
+
+
+Summary
+---------------
+
+vishgit + Smellinux is:
+
+- A minimalist Linux learning environment
+- A text-first approach to computing
+- A revival of literacy through reading and writing
+- A disciplined integration of vim, sh, and git
+- A path toward fluency through repetition
+
+Small tools. Deep practice. Lasting skills.
 
 
