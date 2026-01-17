@@ -156,6 +156,9 @@ This choice is both practical and historical:
 - It invites reading, writing, querying, and transformation
 
 
+From English literacy to Computer Literacy
+-------------------
+
 Historically, English literacy was built around reading and writing the Bible—memorizing, annotating, preaching, and applying text. Smellinux revives this tradition, but reframes it through modern computing literacy:
 
 - Text processing
