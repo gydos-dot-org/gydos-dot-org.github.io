@@ -17,6 +17,10 @@ Durham, NC 27705-4188
 
 paul@gydos.org
 
+
+README.md at https://github.gydos.org
+===============
+
 currently best place to start is this README.md at 
 https://github.gydos.org --> README.md at https://gydos-dot-org.github.io
 
