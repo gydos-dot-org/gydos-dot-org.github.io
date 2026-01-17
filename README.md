@@ -9,7 +9,7 @@ Gydos.org
 
 Paul Gydos, Founder
 
-c/o Gydos Dot Org (gydos.org)
+c/o Gydos Dot Org 
 
 811 Ninth St. Ste. 120 #114
 
