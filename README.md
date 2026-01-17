@@ -4,7 +4,7 @@ vishgit & Smellinux
 A text-first discipline for computer literacy
 
 Overview
----------------
+--------
 
 vishgit is a deliberately small, text-centered practice built around three timeless tools:
 
@@ -23,7 +23,7 @@ The goal is not convenience or abstraction, but fluency—developed through repe
 
 
 What is Smellinux?
-------------------------------
+------------------
 
 Smellinux stands for “A Small Environment for Learning Linux.”
 
@@ -42,7 +42,7 @@ Smellinux can run anywhere a terminal exists, making it suitable for low-resourc
 
 
 The Shell Standard
-‐-----------------------------
+‐-----------------
 
 All executable scripts in Smellinux begin with: (Sh)
 #!/bin/sh
