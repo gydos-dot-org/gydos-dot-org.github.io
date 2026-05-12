@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <!--
-    github.gydos.org — public landing page draft
+    github.gydos.org — public landing page
 
     Purpose:
-      This single-file page is designed for the root of:
+      Single-file static homepage for:
         gydos-dot-org/gydos-dot-org.github.io
 
-      GitHub Pages will serve this file as the primary homepage when it is
-      committed as index.html at the top level of the publishing branch.
+      GitHub Pages serves this file as the public homepage when committed
+      as index.html at the repository root.
 
     Design goals:
       - No build step.
       - No external CSS or JavaScript dependencies.
-      - Readable on phones, laptops, and GitHub Pages' static hosting.
-      - Present the public work as an intentional portfolio/workbench,
-        not as a loose collection of unfinished experiments.
+      - Mobile-readable on phones, laptops, GitHub Pages, and in-app browsers.
+      - Present Gydos.org as an intentional public workbench rather than a
+        loose pile of unfinished experiments.
 
     Stewardship:
       Project owner / public identity: Paul Gydos, gydos-dot-org
@@ -24,8 +24,9 @@
   -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Gydos.org public workbench: vishgit, Smellinux, local-first tools, Siftlog Cathedral, Meditation Soundbox, and text-first computing.">
+  <meta name="description" content="Gydos.org public workbench: Android-on-Android development, vishgit, Smellinux, InfoCodex, Siftlog Cathedral, Meditation Soundbox, Verse of the Day, whatif, and text-first computing.">
   <title>Gydos.org | Small Tools. Deep Practice.</title>
+
   <style>
     :root {
       --bg: #0f172a;
@@ -33,10 +34,11 @@
       --panel-soft: #1f2937;
       --text: #f8fafc;
       --muted: #cbd5e1;
-      --line: rgba(255, 255, 255, 0.14);
+      --line: rgba(255, 255, 255, 0.16);
       --accent: #facc15;
       --accent-2: #38bdf8;
       --good: #86efac;
+      --warn: #fde68a;
       --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
       --radius: 24px;
       --max: 1120px;
@@ -54,8 +56,8 @@
       margin: 0;
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.20), transparent 34rem),
-        radial-gradient(circle at top right, rgba(250, 204, 21, 0.16), transparent 30rem),
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 34rem),
+        radial-gradient(circle at top right, rgba(250, 204, 21, 0.17), transparent 30rem),
         var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -63,6 +65,11 @@
 
     a {
       color: inherit;
+    }
+
+    code,
+    pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     }
 
     .shell {
@@ -79,6 +86,7 @@
       padding: 8px 12px;
       border-radius: 999px;
       z-index: 10;
+      font-weight: 800;
     }
 
     .skip-link:focus {
@@ -90,7 +98,7 @@
       top: 0;
       z-index: 5;
       backdrop-filter: blur(16px);
-      background: rgba(15, 23, 42, 0.76);
+      background: rgba(15, 23, 42, 0.80);
       border-bottom: 1px solid var(--line);
     }
 
@@ -138,7 +146,7 @@
     }
 
     .hero {
-      padding: 84px 0 44px;
+      padding: 72px 0 40px;
     }
 
     .eyebrow {
@@ -150,7 +158,7 @@
       border-radius: 999px;
       padding: 7px 12px;
       font-weight: 800;
-      font-size: 0.86rem;
+      font-size: 0.84rem;
       letter-spacing: 0.02em;
       text-transform: uppercase;
     }
@@ -164,13 +172,13 @@
     }
 
     h1 {
-      max-width: 900px;
+      max-width: 930px;
       margin-top: 24px;
-      font-size: clamp(2.7rem, 7vw, 6.6rem);
+      font-size: clamp(2.25rem, 5.2vw, 4.8rem);
     }
 
     h2 {
-      font-size: clamp(2rem, 4vw, 3.35rem);
+      font-size: clamp(1.95rem, 3.6vw, 3.15rem);
       margin-bottom: 18px;
     }
 
@@ -179,9 +187,9 @@
     }
 
     .lead {
-      max-width: 760px;
+      max-width: 820px;
       color: var(--muted);
-      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      font-size: clamp(1.05rem, 1.7vw, 1.24rem);
       margin: 24px 0 0;
     }
 
@@ -219,11 +227,11 @@
     }
 
     .section {
-      padding: 54px 0;
+      padding: 52px 0;
     }
 
     .section-intro {
-      max-width: 780px;
+      max-width: 840px;
       color: var(--muted);
       margin: 0 0 24px;
       font-size: 1.06rem;
@@ -237,7 +245,7 @@
 
     .card {
       grid-column: span 6;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.045));
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 24px;
@@ -251,9 +259,20 @@
         linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.05));
     }
 
+    .card.third {
+      grid-column: span 4;
+    }
+
     .card p {
       color: var(--muted);
       margin: 12px 0 0;
+    }
+
+    .card code {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.35rem;
     }
 
     .tag-row {
@@ -272,37 +291,11 @@
       font-size: 0.84rem;
     }
 
-    .project-list {
-      margin: 16px 0 0;
-      padding-left: 1.15rem;
-      color: var(--muted);
-    }
-
-    .project-list li + li {
-      margin-top: 8px;
-    }
-
-    .project-list strong {
-      color: var(--text);
-    }
-
-    .figure-card {
-      overflow: hidden;
-    }
-
-    .figure-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 18px;
-      margin-top: 18px;
-      border: 1px solid var(--line);
-    }
-
-    .figure-card figcaption {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 0.98rem;
+    .tag.warn {
+      color: #111827;
+      background: var(--warn);
+      border-color: transparent;
+      font-weight: 800;
     }
 
     .project-link {
@@ -316,6 +309,20 @@
     .project-link:hover,
     .project-link:focus {
       text-decoration: underline;
+    }
+
+    .project-list {
+      margin: 16px 0 0;
+      padding-left: 1.15rem;
+      color: var(--muted);
+    }
+
+    .project-list li + li {
+      margin-top: 8px;
+    }
+
+    .project-list strong {
+      color: var(--text);
     }
 
     .principles {
@@ -346,22 +353,11 @@
     .terminal {
       background: #0b1220;
       color: #f8fafc;
-      border: 1px solid rgba(255, 255, 255, 0.20);
+      border: 1px solid rgba(255, 255, 255, 0.22);
       border-radius: var(--radius);
       padding: 24px;
       overflow-x: auto;
       box-shadow: var(--shadow);
-    }
-
-    code,
-    pre {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-    }
-
-    pre {
-      margin: 0;
-      color: #f8fafc;
-      font-size: 0.96rem;
     }
 
     .terminal h3 {
@@ -377,6 +373,25 @@
 
     .terminal .project-list li {
       padding-left: 0.2rem;
+    }
+
+    .figure-card {
+      overflow: hidden;
+    }
+
+    .figure-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      margin-top: 18px;
+      border: 1px solid var(--line);
+    }
+
+    .figure-card figcaption {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.98rem;
     }
 
     footer {
@@ -402,6 +417,12 @@
       text-decoration: underline;
     }
 
+    @media (max-width: 920px) {
+      .card.third {
+        grid-column: span 6;
+      }
+    }
+
     @media (max-width: 820px) {
       .topbar {
         align-items: flex-start;
@@ -414,11 +435,12 @@
       }
 
       .hero {
-        padding-top: 58px;
+        padding-top: 52px;
       }
 
       .card,
-      .card.featured {
+      .card.featured,
+      .card.third {
         grid-column: span 12;
       }
 
@@ -428,6 +450,10 @@
     }
 
     @media (max-width: 540px) {
+      .shell {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
       .principles {
         grid-template-columns: 1fr;
       }
@@ -435,9 +461,14 @@
       .button {
         width: 100%;
       }
+
+      h1 {
+        font-size: clamp(2.05rem, 12vw, 3.35rem);
+      }
     }
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -451,6 +482,7 @@
         <a href="#work">Work</a>
         <a href="#practice">Practice</a>
         <a href="#roadmap">Roadmap</a>
+        <a href="#leadership-note">CTO</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -461,9 +493,9 @@
       <span class="eyebrow">Public workbench</span>
       <h1>Plain text, local tools, versioned learning, and creative systems that can be understood.</h1>
       <p class="lead">
-        Gydos.org is a growing public workspace for text-first computing, small reproducible environments,
-        local-first document tools, and scriptable sound-and-reading systems for study, focus, prayer,
-        recovery, and creative work.
+        Gydos.org is a growing public workspace for Android-on-Android development, text-first computing,
+        small reproducible environments, local-first document tools, Codex workflows, and scriptable
+        sound-and-reading systems for study, focus, prayer, recovery, and creative work.
       </p>
       <div class="button-row">
         <a class="button primary" href="https://github.com/gydos-dot-org">View GitHub profile</a>
@@ -474,33 +506,13 @@
     <section id="work" class="section shell">
       <h2>Current public projects</h2>
       <p class="section-intro">
-        Some work is already public. Some work is still being cleaned up before it deserves a repository.
+        Some work is already public. Some work is still being cleaned up before it deserves a full release.
         The common thread is reducing friction between thought, text, command, memory, and publication —
         while keeping the tools small enough to understand, repair, and teach.
       </p>
 
       <div class="grid">
         <article class="card featured">
-          <h3>Smellinux + vishgit</h3>
-          <p>
-            The cornerstone project is <strong>Smellinux</strong>: a small Linux learning and working environment
-            built around a plain, memorable discipline — edit with <strong>vim</strong>, execute with
-            <strong>sh</strong>, and remember with <strong>git</strong>. The public repository is not rushed yet;
-            the project is being shaped carefully so the first committed version can be readable,
-            reproducible, and worth teaching from.
-          </p>
-          <div class="tag-row" aria-label="Project tags">
-            <span class="tag">pre-public cornerstone</span>
-            <span class="tag">vim</span>
-            <span class="tag">POSIX sh</span>
-            <span class="tag">git</span>
-            <span class="tag">Alpine Linux</span>
-            <span class="tag">CSV literacy</span>
-          </div>
-          <a class="project-link" href="#roadmap">See where it fits →</a>
-        </article>
-
-        <article class="card">
           <h3>Android-on-Android Development Toolchain</h3>
           <p>
             A reproducible Termux-based Android app development workflow that builds real APKs directly
@@ -530,6 +542,77 @@
         </article>
 
         <article class="card">
+          <h3>Smellinux + vishgit</h3>
+          <p>
+            The cornerstone environment concept: a small Linux learning and working system built around a
+            plain, memorable discipline — edit with <strong>vim</strong>, execute with <strong>sh</strong>,
+            and remember with <strong>git</strong>. The public repository is not rushed yet; the project is
+            being shaped carefully so the first committed version can be readable, reproducible, and worth teaching from.
+          </p>
+          <div class="tag-row" aria-label="Project tags">
+            <span class="tag warn">pre-public cornerstone</span>
+            <span class="tag">vim</span>
+            <span class="tag">POSIX sh</span>
+            <span class="tag">git</span>
+            <span class="tag">Alpine Linux</span>
+            <span class="tag">CSV literacy</span>
+          </div>
+          <a class="project-link" href="#roadmap">See where it fits →</a>
+        </article>
+
+        <article class="card">
+          <h3>InfoCodex</h3>
+          <p>
+            A lean local knowledge pack for becoming sharper with Codex, especially on storage-constrained
+            Android / Termux setups. It collects power-user paths, prompting patterns, config and permissions
+            notes, AGENTS.md / skills guidance, lean-stack habits, tooling pairings, and reusable playbooks.
+          </p>
+          <div class="tag-row" aria-label="Project tags">
+            <span class="tag">Codex</span>
+            <span class="tag">Termux</span>
+            <span class="tag">AGENTS.md</span>
+            <span class="tag">workflows</span>
+            <span class="tag">templates</span>
+          </div>
+          <a class="project-link" href="https://github.com/gydos-dot-org/InfoCodex">Open repository →</a>
+        </article>
+
+        <article class="card">
+          <h3>Verse of the Day</h3>
+          <p>
+            A platform-neutral Rust command-line application that selects one KJV passage for the current
+            local calendar day. The order is deterministic by year, while a separate POSIX <code>/bin/sh</code>
+            implementation keeps the idea close to the vishgit path.
+          </p>
+          <div class="tag-row" aria-label="Project tags">
+            <span class="tag">Rust</span>
+            <span class="tag">POSIX sh</span>
+            <span class="tag">KJV</span>
+            <span class="tag">Meta-V</span>
+            <span class="tag">daily CLI</span>
+          </div>
+          <a class="project-link" href="https://github.com/gydos-dot-org/verseoftheday">Open repository →</a>
+        </article>
+
+        <article class="card">
+          <h3>Meditation Soundbox</h3>
+          <p>
+            A Windows-first, local-first console instrument for generated meditative/electronic soundscapes,
+            live frequency changes, rhythm and synthesis variation, Piper text-to-speech, pasted readings,
+            and KJV / Meta-V scripture loading. The Android 16 port is a serious future target for the
+            Android-on-Android toolchain.
+          </p>
+          <div class="tag-row" aria-label="Project tags">
+            <span class="tag">C#</span>
+            <span class="tag">audio</span>
+            <span class="tag">Piper TTS</span>
+            <span class="tag">KJV / Meta-V</span>
+            <span class="tag">scriptable sessions</span>
+          </div>
+          <a class="project-link" href="https://github.com/gydos-dot-org/meditation-soundbox">Open repository →</a>
+        </article>
+
+        <article class="card">
           <h3>Siftlog Cathedral</h3>
           <p>
             A local-first C# application for gathering scattered writing and documents into a uniform,
@@ -547,20 +630,20 @@
         </article>
 
         <article class="card">
-          <h3>Meditation Soundbox</h3>
+          <h3>whatif</h3>
           <p>
-            A Windows-first, local-first console instrument for generated meditative/electronic soundscapes,
-            live frequency changes, rhythm and synthesis variation, Piper text-to-speech, pasted readings,
-            and KJV / Meta-V scripture loading.
+            A seed-stage project for a free-of-cost, manifest-driven creative toolchain: music, spoken word,
+            Scripture-aware text workflows, attribution tracking, and local-first experiments. There is not
+            a build to present yet; the purpose is to give the idea a public name and a careful place to grow.
           </p>
           <div class="tag-row" aria-label="Project tags">
-            <span class="tag">C#</span>
-            <span class="tag">audio</span>
-            <span class="tag">Piper TTS</span>
-            <span class="tag">KJV / Meta-V</span>
-            <span class="tag">scriptable sessions</span>
+            <span class="tag warn">seed-stage</span>
+            <span class="tag">manifest</span>
+            <span class="tag">creative tooling</span>
+            <span class="tag">music</span>
+            <span class="tag">local-first</span>
           </div>
-          <a class="project-link" href="https://github.com/gydos-dot-org/meditation-soundbox">Open repository →</a>
+          <a class="project-link" href="https://github.com/gydos-dot-org/whatif">Open repository →</a>
         </article>
       </div>
     </section>
@@ -568,8 +651,8 @@
     <section id="practice" class="section shell">
       <h2>The practice</h2>
       <p class="section-intro">
-        This work is not only about apps. It is about building an understandable way to work: readable text,
-        repeatable commands, visible history, and tools that can be explained line by line.
+        This work is not only about apps. It is about building an understandable way to work:
+        readable text, repeatable commands, visible history, and tools that can be explained line by line.
       </p>
 
       <div class="principles">
@@ -599,20 +682,21 @@
         The Android-on-Android toolchain deserves a reproducible guide and repository, with KJVOnTap,
         Falling Blocks, Pong Invaders, and the Meditation Soundbox Android 16 port documented as concrete proof
         of the workflow. Smellinux should become a first-class public project when it is ready; Siftlog Cathedral
-        needs cleanup; Meditation Soundbox needs clearer release notes, install paths, and roadmap language.
+        needs cleanup; InfoCodex and Verse of the Day need useful examples; whatif needs a careful first build.
       </p>
 
       <div class="terminal" aria-label="Roadmap">
         <h3>$ next</h3>
         <ol class="project-list">
-          <li>Give github.gydos.org a true landing page.</li>
+          <li>Keep github.gydos.org readable, current, and honest about project status.</li>
           <li>Document the Android-on-Android development toolchain as a reproducible public project.</li>
           <li>Add review pages for KJVOnTap, Falling Blocks, Pong Invaders, and the Meditation Soundbox Android 16 port.</li>
-          <li>Keep Smellinux central, but do not publish it carelessly.</li>
           <li>Prepare Smellinux / vishgit as a first-class repository with scripts, lessons, and logs.</li>
-          <li>Clean up Siftlog Cathedral: .gitignore, generated files, README, and push history.</li>
+          <li>Clean up Siftlog Cathedral: <code>.gitignore</code>, generated files, README, and push history.</li>
+          <li>Expand InfoCodex with concise field-tested Codex workflows for Windows and Termux.</li>
+          <li>Make Verse of the Day easy to install, run, and compare across Rust and POSIX sh.</li>
+          <li>Let whatif remain seed-stage until it has a minimal, attribution-aware first build.</li>
           <li>Grow Meditation Soundbox toward mixer buses, logs, scripts, voice selection, and smoother sessions.</li>
-          <li>Split each project page into: purpose, status, install, roadmap, and development log.</li>
           <li>Keep everything small enough to read, run, explain, and version.</li>
         </ol>
       </div>
@@ -622,13 +706,11 @@
       <figure class="card featured figure-card">
         <h2 id="leadership-note">Leadership</h2>
         <p><strong>My Chief Technology Officer for my startup gydos-dot-org and myself.</strong></p>
-        <!--
-          Optional image:
-          1. Save the photo in this repository as: images/cto-photo.jpg
-          2. Uncomment the img tag below.
-          3. Keep the alt text practical and descriptive.
-        -->
-        <!-- <img src="images/cto-photo.jpg" alt="A playful photo of the site owner beside a gold humanoid robot figure."> -->
+        <img
+          src="images/cto-photo.jpg?v=20260512"
+          alt="A playful photo of the site owner beside a gold humanoid robot figure."
+          loading="lazy"
+          decoding="async">
         <figcaption>
           A playful nod to the abstraction layer of aggregate AIs, software, tools, and search technologies
           that help make the work referenced on this page possible.
